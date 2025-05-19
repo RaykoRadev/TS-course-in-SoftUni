@@ -1,4 +1,9 @@
-function responseUnknown(obj: unknown) {}
+function responseUnknown(obj: unknown): string {
+    if ("value" in (obj as any) && typeof (obj as any).value === "string") {
+        return (obj as any).value;
+    }
+    return "-";
+}
 
 console.log(responseUnknown({ code: 200, text: "Ok", value: [1, 2, 3] }));
 console.log(

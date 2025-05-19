@@ -13,20 +13,16 @@ enum Month {
     Dec = "December",
 }
 
-function checkTheDay(arr: unknown) {
-    if (arr instanceof Array) {
-        for (const el of arr) {
-            if (el instanceof Date) {
-                const temp = el.toString();
-                const dateInArr: string[] = temp.split(" ");
+function checkTheDay(arr: unknown[]): void {
+    for (const el of arr) {
+        if (el instanceof Date) {
+            const temp = el.toString();
+            const dateInArr: string[] = temp.split(" ");
 
-                if (dateInArr[0] === "Fri" && dateInArr[2] === "13") {
-                    let shit = dateInArr[1] as keyof typeof Month;
+            if (dateInArr[0] === "Fri" && dateInArr[2] === "13") {
+                let shit = dateInArr[1] as keyof typeof Month;
 
-                    console.log(
-                        `${dateInArr[2]}-${Month[shit]}-${dateInArr[3]}`
-                    );
-                }
+                console.log(`${dateInArr[2]}-${Month[shit]}-${dateInArr[3]}`);
             }
         }
     }

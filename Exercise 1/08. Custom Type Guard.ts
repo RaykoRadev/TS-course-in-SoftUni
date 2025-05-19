@@ -1,26 +1,33 @@
-// let arr: unknown = true;
-// if (isNotEmptyStringArray(arr)) {
-//     console.log(arr.length);
+// function isNotEmptyStringArray(arr: unknown): arr is string[] {
+//     if (arr instanceof Array) {
+//         if (arr.length > 0 && arr.every((el) => typeof el === "string")) {
+//             console.log(true);
+//             return true;
+//         }
+//     }
+//     console.log(false);
+//     return false;
 // }
+// isNotEmptyStringArray({});
+// isNotEmptyStringArray({ test: "one" });
+// isNotEmptyStringArray([]);
+// isNotEmptyStringArray(undefined);
+// isNotEmptyStringArray(null);
+// isNotEmptyStringArray([12, 13]);
+// isNotEmptyStringArray(["test", 123]);
+// isNotEmptyStringArray(["a", "b", "c"]);
 
-// type heck = string[]
+//~~~~ Alex's variant ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function isNotEmptyStringArray(arr: unknown) {
-    if (arr instanceof Array) {
-        if (arr.length > 0 && arr.every((el) => typeof el === "string")) {
-            console.log(true);
-            return true;
-        }
-    }
-    console.log(false);
-    return false;
+function isNonEmptyStringArray(arg: unknown): arg is string[] {
+    return (
+        Array.isArray(arg) &&
+        arg.length >= 1 &&
+        arg.every((el) => typeof el === "string")
+    );
 }
 
-isNotEmptyStringArray({});
-isNotEmptyStringArray({ test: "one" });
-isNotEmptyStringArray([]);
-isNotEmptyStringArray(undefined);
-isNotEmptyStringArray(null);
-isNotEmptyStringArray([12, 13]);
-isNotEmptyStringArray(["test", 123]);
-isNotEmptyStringArray(["a", "b", "c"]);
+let arr: unknown = ["a", "b", "c"];
+if (isNonEmptyStringArray(arr)) {
+    console.log(arr.length); // allowed
+}

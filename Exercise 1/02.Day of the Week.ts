@@ -8,11 +8,12 @@ enum Days {
     Sunday,
 }
 function daysOfTheweek(num: number): void {
-    if (!Days[num]) {
-        console.log("error");
-        return;
-    }
-    console.log(Days[num]);
+    // if (!Days[num]) {
+    //     console.log("error");
+    //     return;
+    // }
+    // console.log(Days[num]);
+    console.log(Days[num] || "error");
 }
 
 daysOfTheweek(1);

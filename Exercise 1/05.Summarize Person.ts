@@ -7,6 +7,8 @@ function summary(
     hobbies?: string[],
     workInfo?: [string, number]
 ): [number, string, number, string, string] {
+    //* if / else can be replaced by ternaren operator
+
     let fullname: string = "";
 
     if (typeof middleName === "undefined") {
