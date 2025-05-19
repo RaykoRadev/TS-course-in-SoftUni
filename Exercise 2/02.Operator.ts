@@ -10,8 +10,8 @@ function operator(
         }
     } else if (operation === "Length") {
         if (!notNumGard(param)) {
-            console.log(param.length);
-            return param.length;
+            console.log(param.length % operand);
+            return param.length % operand;
         }
     } else {
         if (typeof param === "string") {
