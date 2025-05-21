@@ -1,10 +1,10 @@
-type obj = {
+type Http = {
     code: number;
     text: string;
     printChars?: number;
 };
 
-function httpCode(arg: obj): string {
+function httpCode(arg: Http): string {
     if (arg.printChars) {
         let temp: string = arg.text.slice(0, arg.printChars);
         console.log(temp);

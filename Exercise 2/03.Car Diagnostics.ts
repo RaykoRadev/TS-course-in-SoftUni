@@ -18,7 +18,7 @@ interface Engine extends ExtraParts {
     oilDensity: number;
 }
 
-function solve1(arg1: CarBody, arg2: Tires, arg3: Engine) {
+function createCar(arg1: CarBody, arg2: Tires, arg3: Engine) {
     // some magic activities
 }
 
@@ -27,7 +27,7 @@ function runDiagnostics(): string {
     return partName;
 }
 
-solve1(
+createCar(
     {
         material: "aluminum",
         state: "scratched",

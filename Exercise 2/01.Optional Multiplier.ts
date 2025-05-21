@@ -3,6 +3,7 @@ function optionalMultiplier(
     arg2?: number | string,
     arg3?: number | string
 ): number {
+    // const num1 = arg1 == undefind ? 1 : Number(arg1);   //* same for the rest and without gard function
     const num1 = gard(arg1);
     const num2 = gard(arg2);
     const num3 = gard(arg3);
