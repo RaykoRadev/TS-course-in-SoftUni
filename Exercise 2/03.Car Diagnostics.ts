@@ -1,19 +1,44 @@
-interface body {
+interface ExtraParts {
+    partName: string;
+    runDiagnostics(): string;
+}
+
+interface CarBody extends ExtraParts {
     material: string;
     state: string;
 }
 
-interface tires {
-    airPresure: number;
+interface Tires extends ExtraParts {
+    airPressure: number;
     condition: string;
 }
 
-interface engine {
-    horspowers: number;
+interface Engine extends ExtraParts {
+    horsepower: number;
     oilDensity: number;
 }
 
-function solve(arg1: body, arg2: tires, arg3: engine) {}
-// { material: 'aluminum', state: 'scratched', partName: 'Car Body', runDiagnostics },
-// { airPressure: 30, condition: 'needs change', partName: 'Tires', runDiagnostics },
-// { horsepower: 300, oilDensity: 780, partName: 'Engine', runDiagnostics }
+function solve1(arg1: CarBody, arg2: Tires, arg3: Engine) {
+    // some magic activities
+}
+
+function runDiagnostics(): string {
+    let partName: string = "";
+    return partName;
+}
+
+solve1(
+    {
+        material: "aluminum",
+        state: "scratched",
+        partName: "Car Body",
+        runDiagnostics,
+    },
+    {
+        airPressure: 30,
+        condition: "needs change",
+        partName: "Tires",
+        runDiagnostics,
+    },
+    { horsepower: 300, oilDensity: 780, partName: "Engine", runDiagnostics }
+);
