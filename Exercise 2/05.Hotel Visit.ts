@@ -1,17 +1,22 @@
 interface something {
     number: number;
     hallway: "A" | "C";
-    train?: () => void;
-    dine?: () => void;
-    sleep?: () => void;
-    pass?: "Guest";
+    pass?: string;
 }
 
-interface train1 {
+interface train extends something {
     train(): void;
 }
 
-function visitFloor(floor: something): train1 {
+interface dine extends something {
+    dine(): void;
+}
+
+interface sleep extends something {
+    sleep(): void;
+}
+
+function visitFloor(floor: train | dine | sleep) {
     switch (floor.number) {
         case 1:
             floor.train();
