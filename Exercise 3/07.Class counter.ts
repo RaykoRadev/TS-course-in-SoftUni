@@ -1,12 +1,12 @@
 class Counter {
     private static count: number = 0;
 
-    static increment() {
-        this.count++;
+    static increment(): void {
+        Counter.count++;
     }
 
     static getCount(): number {
-        return this.count;
+        return Counter.count;
     }
 }
 

@@ -5,13 +5,13 @@ class Message {
 }
 
 class EmailMessage extends Message {
-    send(): string {
+    override send(): string {
         return "Sending email...";
     }
 }
 
 class SMSMessage extends Message {
-    send(): string {
+    override send(): string {
         return "Sending SMS...";
     }
 }

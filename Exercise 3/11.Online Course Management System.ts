@@ -18,7 +18,7 @@ class ProgrammingCourse extends Course {
         this.language = language;
     }
 
-    getDescription(): string {
+    override getDescription(): string {
         return `"Programming Course: ${this.title} in ${this.language} - ${this.duration} hours"`;
     }
 }
@@ -31,7 +31,7 @@ class DesignCourse extends Course {
         this.tools = tools;
     }
 
-    getDescription(): string {
+    override getDescription(): string {
         return `"Design Course: ${this.title} using ${this.tools.join(
             ", "
         )} - ${this.duration} hours"`;
