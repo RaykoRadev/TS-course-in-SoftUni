@@ -4,16 +4,10 @@ class Task {
     completed = false;
     private _createdBy: string;
 
-    constructor(
-        title: string,
-        description: string,
-        createdBy: string
-        // completed: boolean
-    ) {
+    constructor(title: string, description: string, createdBy: string) {
         this.title = title;
         this.description = description;
         this._createdBy = createdBy;
-        // this.completed = completed;
     }
 
     get createdBy(): string {
