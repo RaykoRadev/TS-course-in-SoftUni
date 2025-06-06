@@ -1,13 +1,13 @@
 function logThat(
     target: any,
-    propertyName: string,
+    methodName: string,
     descriptor: PropertyDescriptor
 ) {
     const originalFUnk = descriptor.value;
 
     descriptor.value = function (...arg: any[]) {
         console.log(
-            `Function '${propertyName}' called with arguments: ${arg[0]}, ${arg[1]}`
+            `Function '${methodName}' called with arguments: ${arg[0]}, ${arg[1]}`
         );
 
         return originalFUnk.apply(this, arg);

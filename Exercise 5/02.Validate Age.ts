@@ -10,8 +10,10 @@ function validateTheAge(
             throw new Error("Age must be between 1 and 200");
         }
 
-        return originalSet?.call(this, val);
+        originalSet?.call(this, val);
     };
+
+    return descriptor;
 }
 
 class Age {
