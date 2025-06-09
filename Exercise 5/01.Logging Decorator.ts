@@ -1,3 +1,5 @@
+export {};
+
 function logThat(
     target: any,
     methodName: string,
@@ -16,7 +18,7 @@ function logThat(
     return descriptor;
 }
 
-class Person1 {
+class Person {
     fName: string;
     lName: string;
 
@@ -30,6 +32,6 @@ class Person1 {
     }
 }
 
-let person1 = new Person1("John", "Does");
-Person1.getFullName(person1.fName, person1.lName);
-Person1.getFullName("Benny", "Tres");
+let person1 = new Person("John", "Does");
+Person.getFullName(person1.fName, person1.lName);
+Person.getFullName("Benny", "Tres");
