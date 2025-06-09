@@ -18,7 +18,7 @@ export function decorator3(
     descriptor: PropertyDescriptor
 ) {}
 
-export function decorator4<T extends new (...arg: any[]) => {}>(
+export function decorator4<T extends {}>(
     constructor: T & { forbiddenSymbols: string[] }
 ) {
     const originalSymbols = constructor.forbiddenSymbols;
